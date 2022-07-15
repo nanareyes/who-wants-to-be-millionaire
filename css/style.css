@@ -17,7 +17,7 @@ section{
 #start-question, #question, #answer{
   background-image: url(../img/frameQuestions.png);
 }
-#intro, #start-question, #question, #win, #lose{
+#start-question,#intro, #question,#answer, #win{
   display:none;
 }
 #intro h1{
@@ -125,4 +125,30 @@ section{
 .btnQuestionAnswer{
   background: #f9a04a;
   color: #000;
+}
+#win,#lose h1{
+  color:#fff;
+  font-size: 5.5rem;
+  padding-top: 30vh;
+  width: 50vw;
+  margin: 0 auto;
+}
+  .btnWin{
+    background: #e3b15a;
+    width: 25vw;
+    padding: 1.5vh 0;
+    font-size: 2rem;
+    color: #000;
+    font-weight: bold;
+    margin-top: 13vh;
+  }
+.btnPlayAgain{
+  width: 12vw;
+  height: 5vh;
+  margin-top: 8vh;
+  font-size: 1.5rem;
+}
+
+#lose .btnPlayAgain{
+  margin-top: 13vh;
 }
