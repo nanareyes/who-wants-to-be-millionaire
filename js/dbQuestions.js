@@ -1,4 +1,4 @@
-[
+export const questions = [
   [
     {
       "category": "Arte y literatura",
@@ -609,4 +609,4 @@
       "objectFit": "contain"
     }
   ]
-]
+];

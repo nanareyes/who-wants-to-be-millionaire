@@ -45,13 +45,14 @@ export class GameView {
     const sectionStartQuestionBtnPlay = document.createElement('button');
     sectionStartQuestionBtnPlay.classList.add("btnGame", "btnQuestionPlay");
     sectionStartQuestionBtnPlay.textContent = 'Jugar';
+    sectionStartQuestionBtnPlay.addEventListener("click", () => {onChangeCurrentSection("question")})
     sectionStartQuestionDiv.append(sectionStartQuestionBtnNumber,sectionStartQuestionBtnPrice,sectionStartQuestionBtnPlay)
     sectionStartQuestion.append(sectionStartQuestionTitleH1, sectionStartQuestionDiv);
 
     container.append(sectionStartQuestion);
   }
 
-  createViewQuestion(onChangeCurrentSection){
+  createViewQuestion({onChangeCurrentSection}){
     //Se crea la seccion de question
     const sectionQuestion = document.createElement("section");
     sectionQuestion.id = "question";
@@ -114,7 +115,7 @@ export class GameView {
 
   }
 
-  createViewAnswer(onChangeCurrentSection){
+  createViewAnswer({onChangeCurrentSection}){
     const sectionAnswer = document.createElement("section");
     sectionAnswer.id = "answer";
     sectionAnswer.classList.add("inactiveSection");
@@ -172,14 +173,15 @@ export class GameView {
 
     const sectionAnswerBtnPlay = document.createElement('button');
     sectionAnswerBtnPlay.classList.add("btn","btnQuestionPlay");
-    sectionAnswerBtnPlay.textContent = "Jugar";
+    sectionAnswerBtnPlay.textContent = "Siguiente";
+    sectionAnswerBtnPlay.addEventListener("click", () => {onChangeCurrentSection("start-question")})
 
     sectionAnswerDiv.append(sectionAnswerBtnQuestionA,sectionAnswerBtnQuestionB,sectionAnswerBtnQuestionC,sectionAnswerBtnQuestionD);
     sectionAnswer.append(sectionAnswerTitleH1,sectionAnswernBtnQuestionTitle,sectionAnswerDiv, sectionAnswerBtnPlay)
     container.append(sectionAnswer);
   }
 
-  createViewWin(onChangeCurrentSection){
+  createViewWin({onChangeCurrentSection}){
     const sectionWin = document.createElement("section");
     sectionWin.id = "win";
     sectionWin.classList.add("inactiveSection");
@@ -193,13 +195,14 @@ export class GameView {
     const sectionWinBtnPlayAgain = document.createElement("button");
     sectionWinBtnPlayAgain.classList.add("btn", "btnPlayAgain");
     sectionWinBtnPlayAgain.textContent = "Volver a empezar";
+    sectionWinBtnPlayAgain.addEventListener("click", () => {onChangeCurrentSection("intro")})
 
     sectionWinDiv.append(sectionWinBtn);
     sectionWin.append(sectionWinTitleH1,sectionWinDiv,sectionWinBtnPlayAgain);
     container.append(sectionWin);
   }
 
-  createViewLose(onChangeCurrentSection){
+  createViewLose({onChangeCurrentSection}){
     const sectionLose = document.createElement("section");
     sectionLose.id = "lose";
     sectionLose.classList.add("inactiveSection");
@@ -208,6 +211,7 @@ export class GameView {
     const sectionLoseBtnPlayAgain = document.createElement("button");
     sectionLoseBtnPlayAgain.classList.add("btn", "btnPlayAgain");
     sectionLoseBtnPlayAgain.textContent = "Volver a empezar";
+    sectionLoseBtnPlayAgain.addEventListener("click", () => {onChangeCurrentSection("intro")})
 
     sectionLose.append(sectionLoseTitleH1,sectionLoseBtnPlayAgain);
     container.append(sectionLose);

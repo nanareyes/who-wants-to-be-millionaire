@@ -1,7 +1,8 @@
 import { GameView } from "./game.view.js";
+import {questions} from "./dbQuestions.js"
 
 class Game {
-  currentSection = "lose";
+  currentSection = "start-question";
   currentQuestion = 0;
   totalPrize = 0;
   gameView;
@@ -15,19 +16,26 @@ class Game {
       }
     });
     this.gameView.displayCurrentSection(this.currentSection);
-    console.log("current ", this)
   }
 
   changeCurrentSection(currentSection){
-    console.log("current ", this)
-    console.log("current section", currentSection)
-    console.log("current ", this)
-
     this.currentSection = currentSection;
     this.gameView.displayCurrentSection(this.currentSection);
+    if(currentSection === "question"){
+      const question = this.getQuestion();
+      console.log(question);
+    }
 
   }
-}
+  getQuestion(){
+    const questionsArray = questions[this.currentQuestion]
+    const numberQuestion = Math.floor(Math.random()*(questionsArray.length))
+    console.log(numberQuestion)
+    const question = questionsArray[numberQuestion];
+    console.log(question)
+  }
 
+}
+//console.log(questionsArray)
 const game = new Game();
 game.start();
