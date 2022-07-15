@@ -17,7 +17,7 @@ section{
 #start-question, #question, #answer{
   background-image: url(../img/frameQuestions.png);
 }
-#intro, #start-question, #answer, #win, #lose{
+#intro, #start-question, #question, #win, #lose{
   display:none;
 }
 #intro h1{
@@ -83,7 +83,7 @@ section{
   width: 50vw;
   margin: 0 auto;
 }
-#question h1{
+#question, #answer h1{
   color:#fff;
   font-size: 3rem;
   padding-top: 10vh;
@@ -105,12 +105,24 @@ section{
   margin-top: 10vh;
   font-size: 2rem;
 }
-.btnQuestionOption{
+.btnOption{
   font-size: 1.5rem;
   text-align: left;
   padding-left: 1.5rem;
 }
-.btnQuestionOption span{
+.btnOption span{
   font-weight: bold;
   padding-right: 0.5rem;
+}
+.btnQuestionAnswerOk{
+  background: #a0fa47;
+  color: #000;
+}
+.btnQuestionAnswerWrong{
+  background: #ff5f56;
+  color: #000;
+}
+.btnQuestionAnswer{
+  background: #f9a04a;
+  color: #000;
 }
