@@ -17,8 +17,11 @@ section{
 #start-question, #question, #answer{
   background-image: url(../img/frameQuestions.png);
 }
-#start-question,#intro, #question,#answer, #win{
+.inactiveSection{
   display:none;
+}
+.activeSection{
+  display: block;
 }
 #intro h1{
   color:#fff;
