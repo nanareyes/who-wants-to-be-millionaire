@@ -86,7 +86,7 @@ section{
   width: 50vw;
   margin: 0 auto;
 }
-#question, #answer h1{
+#question h1, #answer h1{
   color:#fff;
   font-size: 3rem;
   padding-top: 10vh;
@@ -113,7 +113,12 @@ section{
   text-align: left;
   padding-left: 1.5rem;
 }
-.btnOption span{
+.spanOption{
+  font-size: 1.5rem;
+  text-align: left;
+  padding-left: 1.5rem;
+}
+.btnOption .btnSpanLetter{
   font-weight: bold;
   padding-right: 0.5rem;
 }
@@ -129,7 +134,7 @@ section{
   background: #f9a04a;
   color: #000;
 }
-#win,#lose h1{
+#win h1,#lose h1{
   color:#fff;
   font-size: 5.5rem;
   padding-top: 30vh;

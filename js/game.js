@@ -1,11 +1,11 @@
 import { GameView } from "./game.view.js";
 
 class Game {
-  currentSection = "intro";
+  currentSection = "lose";
   currentQuestion = 0;
   totalPrize = 0;
   gameView;
-  
+
   start() {
 
     this.gameView = new GameView();
@@ -25,7 +25,7 @@ class Game {
 
     this.currentSection = currentSection;
     this.gameView.displayCurrentSection(this.currentSection);
-    
+
   }
 }
 
