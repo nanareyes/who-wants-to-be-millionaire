@@ -1,20 +1,20 @@
 export class GameView {
-  
-  question = {};
-  setQuestion(question){
-    this.question = question;
+  gameState;
+
+  setState(gameState){
+    this.gameState = gameState;
   }
 
-  createViews({onChangeCurrentSection}){
-    this.createViewIntro({onChangeCurrentSection});
-    this.createViewStartQuestion({onChangeCurrentSection});
-    this.createViewQuestion({onChangeCurrentSection});
-    this.createViewAnswer({onChangeCurrentSection});
-    this.createViewWin({onChangeCurrentSection});
-    this.createViewLose({onChangeCurrentSection})
+  createViews(){
+    this.createViewIntro();
+    this.createViewStartQuestion();
+    this.createViewQuestion();
+    this.createViewAnswer();
+    this.createViewWin();
+    this.createViewLose()
   }
 
-  createViewIntro({onChangeCurrentSection}){
+  createViewIntro(){
     //busca el contenedor ppal
     const container = document.getElementById('container');
     // Se crea el titulo
@@ -27,12 +27,12 @@ export class GameView {
     const sectionIntroBtn = document.createElement('button');
     sectionIntroBtn.classList.add("btn", "btnIntro");
     sectionIntroBtn.textContent = 'Empezar a jugar';
-    sectionIntroBtn.addEventListener("click", () => {onChangeCurrentSection("start-question")})
+    sectionIntroBtn.addEventListener("click", () => {this.gameState.setCurrentSection("start-question")})
     sectionIntro.append(gameTitleH1, sectionIntroBtn);
     container.append(sectionIntro);
   }
 
-  createViewStartQuestion({onChangeCurrentSection}){
+  createViewStartQuestion(){
     //Se crea la seccion de start-question
     const sectionStartQuestionTitleH1 = document.createElement('h1');
     sectionStartQuestionTitleH1.textContent = 'QUIÉN QUIERE SER MILLONARIO?';
@@ -50,14 +50,14 @@ export class GameView {
     const sectionStartQuestionBtnPlay = document.createElement('button');
     sectionStartQuestionBtnPlay.classList.add("btnGame", "btnQuestionPlay");
     sectionStartQuestionBtnPlay.textContent = 'Jugar';
-    sectionStartQuestionBtnPlay.addEventListener("click", () => {onChangeCurrentSection("question")})
+    sectionStartQuestionBtnPlay.addEventListener("click", () => {this.gameState.setCurrentSection("question")})
     sectionStartQuestionDiv.append(sectionStartQuestionBtnNumber,sectionStartQuestionBtnPrice,sectionStartQuestionBtnPlay)
     sectionStartQuestion.append(sectionStartQuestionTitleH1, sectionStartQuestionDiv);
 
     container.append(sectionStartQuestion);
   }
 
-  createViewQuestion({onChangeCurrentSection}){
+  createViewQuestion(){
     //Se crea la seccion de question
     const sectionQuestion = document.createElement("section");
     sectionQuestion.id = "question";
@@ -121,7 +121,7 @@ export class GameView {
 
   }
 
-  createViewAnswer({onChangeCurrentSection}){
+  createViewAnswer(){
     const sectionAnswer = document.createElement("section");
     sectionAnswer.id = "answer";
     sectionAnswer.classList.add("inactiveSection");
@@ -180,14 +180,14 @@ export class GameView {
     const sectionAnswerBtnPlay = document.createElement('button');
     sectionAnswerBtnPlay.classList.add("btn","btnQuestionPlay");
     sectionAnswerBtnPlay.textContent = "Siguiente";
-    sectionAnswerBtnPlay.addEventListener("click", () => {onChangeCurrentSection("start-question")})
+    sectionAnswerBtnPlay.addEventListener("click", () => {this.gameState.setCurrentSection("start-question")})
 
     sectionAnswerDiv.append(sectionAnswerBtnQuestionA,sectionAnswerBtnQuestionB,sectionAnswerBtnQuestionC,sectionAnswerBtnQuestionD);
     sectionAnswer.append(sectionAnswerTitleH1,sectionAnswernBtnQuestionTitle,sectionAnswerDiv, sectionAnswerBtnPlay)
     container.append(sectionAnswer);
   }
 
-  createViewWin({onChangeCurrentSection}){
+  createViewWin(){
     const sectionWin = document.createElement("section");
     sectionWin.id = "win";
     sectionWin.classList.add("inactiveSection");
@@ -201,14 +201,14 @@ export class GameView {
     const sectionWinBtnPlayAgain = document.createElement("button");
     sectionWinBtnPlayAgain.classList.add("btn", "btnPlayAgain");
     sectionWinBtnPlayAgain.textContent = "Volver a empezar";
-    sectionWinBtnPlayAgain.addEventListener("click", () => {onChangeCurrentSection("intro")})
+    sectionWinBtnPlayAgain.addEventListener("click", () => {this.gameState.setCurrentSection("intro")})
 
     sectionWinDiv.append(sectionWinBtn);
     sectionWin.append(sectionWinTitleH1,sectionWinDiv,sectionWinBtnPlayAgain);
     container.append(sectionWin);
   }
 
-  createViewLose({onChangeCurrentSection}){
+  createViewLose(){
     const sectionLose = document.createElement("section");
     sectionLose.id = "lose";
     sectionLose.classList.add("inactiveSection");
@@ -217,7 +217,7 @@ export class GameView {
     const sectionLoseBtnPlayAgain = document.createElement("button");
     sectionLoseBtnPlayAgain.classList.add("btn", "btnPlayAgain");
     sectionLoseBtnPlayAgain.textContent = "Volver a empezar";
-    sectionLoseBtnPlayAgain.addEventListener("click", () => {onChangeCurrentSection("intro")})
+    sectionLoseBtnPlayAgain.addEventListener("click", () => {this.gameState.setCurrentSection("intro")})
 
     sectionLose.append(sectionLoseTitleH1,sectionLoseBtnPlayAgain);
     container.append(sectionLose);
@@ -227,27 +227,25 @@ export class GameView {
   updateQuestionContent() {
     // Busca el boton donde esta la pregunta
     const buttonTitle = document.querySelector("#question button.btnQuestionTitle");
+    const question = this.gameState.question;
     if (buttonTitle) {
-      buttonTitle.textContent = this.question.question;
+      buttonTitle.textContent = question.title;
     }
     // Busca el boton de las respuestas
     const buttonFirstAnswer = document.querySelector("#question > div > button:nth-child(1) > span.spanOption");
-    buttonFirstAnswer.textContent = this.question.answer[0].text;
+    buttonFirstAnswer.textContent = question.answer[0].text;
     const buttonSecondAnswer = document.querySelector("#question > div > button:nth-child(2) > span.spanOption");
-    buttonSecondAnswer.textContent = this.question.answer[1].text;
+    buttonSecondAnswer.textContent = question.answer[1].text;
     const buttonThirdAnswer = document.querySelector("#question > div > button:nth-child(3) > span.spanOption");
-    buttonThirdAnswer.textContent = this.question.answer[2].text;
+    buttonThirdAnswer.textContent = question.answer[2].text;
     const buttonFourthAnswer = document.querySelector("#question > div > button:nth-child(4) > span.spanOption");
-    buttonFourthAnswer.textContent = this.question.answer[3].text;
+    buttonFourthAnswer.textContent = question.answer[3].text;
   }
 
-  evaluateAnswer(){
-   
-  }
 
-  displayCurrentSection(currentSection){
+  displayCurrentSection(){
     console.log(this.question);
-    if (currentSection === "question") {
+    if (this.gameState.currentSection === "question") {
       this.updateQuestionContent();
     }
     const sections = document.querySelectorAll('section');
@@ -256,7 +254,7 @@ export class GameView {
       section.classList.add('inactiveSection');
 
     });
-    const section = document.getElementById(currentSection);
+    const section = document.getElementById(this.gameState.currentSection);
     section.classList.add('activeSection')
   }
 }

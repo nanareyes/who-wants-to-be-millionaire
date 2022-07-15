@@ -2,7 +2,7 @@ export const questions = [
   [
     {
       "category": "Arte y literatura",
-      "question": "Compuso la famosa canción \"Bohemian Rhapsody\"",
+      "title": "Compuso la famosa canción \"Bohemian Rhapsody\"",
       "answer": [
         {
           "text": "Freddie Mercury",
@@ -26,7 +26,7 @@ export const questions = [
     },
     {
       "category": "Deportes",
-      "question": "¿Qué tipo de competición es el Giro de Italia?",
+      "title": "¿Qué tipo de competición es el Giro de Italia?",
       "answer": [
         {
           "text": "Una Carrera Ciclistica",
@@ -50,7 +50,7 @@ export const questions = [
     },
     {
       "category": "Geografía",
-      "question": "¿Dónde se encuentra la cordillera de Los Andes?",
+      "title": "¿Dónde se encuentra la cordillera de Los Andes?",
       "answer": [
         {
           "text": "América",
@@ -74,7 +74,7 @@ export const questions = [
     },
     {
       "category": "Arte y literatura",
-      "question": "¿Qué odia Mafalda?",
+      "title": "¿Qué odia Mafalda?",
       "answer": [
         {
           "text": "La sopa",
@@ -98,7 +98,7 @@ export const questions = [
     },
     {
       "category": "Historia",
-      "question": " ¿Cuántos mandamientos hay en el cristianismo?",
+      "title": " ¿Cuántos mandamientos hay en el cristianismo?",
       "answer": [
         {
           "text": "10",
@@ -124,7 +124,7 @@ export const questions = [
   [
     {
       "category": "Arte y literatura",
-      "question": "filósofo que dijo 'solo sé que no sé nada'",
+      "title": "filósofo que dijo 'solo sé que no sé nada'",
       "answer": [
         {
           "text": "Sócrates",
@@ -148,7 +148,7 @@ export const questions = [
     },
     {
       "category": "Arte y literatura",
-      "question": "¿Qué obra de Dante Alighieri cuenta con tres partes, 'Infierno', 'Purgatorio' y 'Paraíso'?",
+      "title": "¿Qué obra de Dante Alighieri cuenta con tres partes, 'Infierno', 'Purgatorio' y 'Paraíso'?",
       "answer": [
         {
           "text": "Divina Comedia",
@@ -172,7 +172,7 @@ export const questions = [
     },
     {
       "category": "Arte y literatura",
-      "question": "famosa artista que estaba casada con su colega, Diego Rivera",
+      "title": "famosa artista que estaba casada con su colega, Diego Rivera",
       "answer": [
         {
           "text": "Frida Kahlo",
@@ -196,7 +196,7 @@ export const questions = [
     },
     {
       "category": "Ciencia y técnologia",
-      "question": "¿Cuál es el hueso más pequeño del cuerpo?",
+      "title": "¿Cuál es el hueso más pequeño del cuerpo?",
       "answer": [
         {
           "text": "El Estribo",
@@ -220,7 +220,7 @@ export const questions = [
     },
     {
       "category": "Ciencia y técnologia",
-      "question": "¿Cómo se mide la fuerza del viento en el mar?",
+      "title": "¿Cómo se mide la fuerza del viento en el mar?",
       "answer": [
         {
           "text": "Nudos",
@@ -246,7 +246,7 @@ export const questions = [
   [
     {
       "category": "Ciencia y técnologia",
-      "question": "¿Qué es una base de datos?",
+      "title": "¿Qué es una base de datos?",
       "answer": [
         {
           "text": "Un servidor que permite almacenar información",
@@ -270,7 +270,7 @@ export const questions = [
     },
     {
       "category": "Deportes",
-      "question": "¿Cuál es el país de origen del futbolista Lionel Messi?",
+      "title": "¿Cuál es el país de origen del futbolista Lionel Messi?",
       "answer": [
         {
           "text": "Argentina",
@@ -294,7 +294,7 @@ export const questions = [
     },
     {
       "category": "Historia",
-      "question": " ¿De qué estaba fabricado originalmente el maquillaje blanco de las Geishas?",
+      "title": " ¿De qué estaba fabricado originalmente el maquillaje blanco de las Geishas?",
       "answer": [
         {
           "text": "Plomo",
@@ -318,7 +318,7 @@ export const questions = [
     },
     {
       "category": "Historia",
-      "question": "¿Qué país fue dirigido por Stalin?",
+      "title": "¿Qué país fue dirigido por Stalin?",
       "answer": [
         {
           "text": "Unión Soviética",
@@ -342,7 +342,7 @@ export const questions = [
     },
     {
       "category": "Ciencia y técnología",
-      "question": "¿Qué números representa el sistema binario?",
+      "title": "¿Qué números representa el sistema binario?",
       "answer": [
         {
           "text": "Los 0 y  1",
@@ -368,7 +368,7 @@ export const questions = [
   [
     {
       "category": "Ciencia y técnologia",
-      "question": "¿Qué son los \"julios\"?",
+      "title": "¿Qué son los \"julios\"?",
       "answer": [
         {
           "text": "Magnitud De La Energía, Trabajo Y Calor",
@@ -392,7 +392,7 @@ export const questions = [
     },
     {
       "category": "Deportes",
-      "question": "¿Cuántos jugadores componen un equipo de rugby?",
+      "title": "¿Cuántos jugadores componen un equipo de rugby?",
       "answer": [
         {
           "text": "15",
@@ -416,7 +416,7 @@ export const questions = [
     },
     {
       "category": "Geografía",
-      "question": "¿Qué separa las franjas de Gaza y Cisjordania?",
+      "title": "¿Qué separa las franjas de Gaza y Cisjordania?",
       "answer": [
         {
           "text": "Israel",
@@ -440,7 +440,7 @@ export const questions = [
     },
     {
       "category": "Historia",
-      "question": "El Renacimiento marcó el inicio de la Edad…",
+      "title": "El Renacimiento marcó el inicio de la Edad…",
       "answer": [
         {
           "text": "Moderna",
@@ -464,7 +464,7 @@ export const questions = [
     },
     {
       "category": "Geografía",
-      "question": "¿Cuál de las grandes montañas ha sido escalada más veces?",
+      "title": "¿Cuál de las grandes montañas ha sido escalada más veces?",
       "answer": [
         {
           "text": "El Everest",
@@ -490,7 +490,7 @@ export const questions = [
   [
     {
       "category": "Geografía",
-      "question": " ¿Qué colores tiene la bandera de Irak?",
+      "title": " ¿Qué colores tiene la bandera de Irak?",
       "answer": [
         {
           "text": "Rojo, Blanco, Verde Y Negro",
@@ -514,7 +514,7 @@ export const questions = [
     },
     {
       "category": "Deportes",
-      "question": "¿Dónde apoyan los jinetes sus pies?",
+      "title": "¿Dónde apoyan los jinetes sus pies?",
       "answer": [
         {
           "text": "Estribos",
@@ -538,7 +538,7 @@ export const questions = [
     },
     {
       "category": "Geografía",
-      "question": " ¿Cuál es la religión mayoritaria enn la India?",
+      "title": " ¿Cuál es la religión mayoritaria enn la India?",
       "answer": [
         {
           "text": "Hinduismo",
@@ -562,7 +562,7 @@ export const questions = [
     },
     {
       "category": "Deportes",
-      "question": "¿Cuántos puntos valen un tiro libre encestado en baloncesto?",
+      "title": "¿Cuántos puntos valen un tiro libre encestado en baloncesto?",
       "answer": [
         {
           "text": "Uno",
@@ -586,7 +586,7 @@ export const questions = [
     },
     {
       "category": "Historia",
-      "question": " ¿María Antonieta fue reina de qué país?",
+      "title": " ¿María Antonieta fue reina de qué país?",
       "answer": [
         {
           "text": "Francia",

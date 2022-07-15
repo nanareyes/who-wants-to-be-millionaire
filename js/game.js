@@ -1,40 +1,37 @@
 import { GameView } from "./game.view.js";
 import {questions} from "./dbQuestions.js"
+import { GameState } from "./game.state.js";
 
 class Game {
-  currentSection = "start-question";
-  currentQuestion = 0;
-  totalPrize = 0;
   gameView;
+  gameState;
+
 
   start() {
-
     this.gameView = new GameView();
-    this.gameView.createViews({
-      onChangeCurrentSection:  (currentSection) => {
-        this.changeCurrentSection(currentSection);
-      }
-    });
-    this.gameView.displayCurrentSection(this.currentSection);
+    this.gameState = new GameState();
+    this.gameView.setState(this.gameState);
+    this.gameView.createViews();
+    this.gameView.displayCurrentSection();
+    this.gameState.events.onSetCurrentSection = ()=>{
+      this.changeCurrentSection();
+    }
   }
 
-  changeCurrentSection(currentSection){
-    this.currentSection = currentSection;
-    if(currentSection === "question"){
+  changeCurrentSection(){
+    if(this.gameState.currentSection === "question"){
       const question = this.getQuestion();
-      this.gameView.setQuestion(question);
-
+      this.gameState.setQuestion(question);
     }
-    this.gameView.displayCurrentSection(this.currentSection);
+    this.gameView.displayCurrentSection();
 
 
   }
   getQuestion(){
-    const questionsArray = questions[this.currentQuestion]
+    const questionsArray = questions[this.gameState.questionLevel]
     const numberQuestion = Math.floor(Math.random()*(questionsArray.length))
     //console.log(numberQuestion)
-    const question = questionsArray[numberQuestion];
-    return question;
+    return questionsArray[numberQuestion];
   }
 
 }
