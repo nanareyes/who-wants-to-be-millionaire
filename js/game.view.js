@@ -1,4 +1,9 @@
 export class GameView {
+  
+  question = {};
+  setQuestion(question){
+    this.question = question;
+  }
 
   createViews({onChangeCurrentSection}){
     this.createViewIntro({onChangeCurrentSection});
@@ -61,7 +66,7 @@ export class GameView {
     sectionQuestionTitleH1.textContent = 'QUIÉN QUIERE SER MILLONARIO?';
     const sectionQuestionBtnQuestionTitle = document.createElement('button');
     sectionQuestionBtnQuestionTitle.classList.add("btnQuestionTitle","btnGame");
-    sectionQuestionBtnQuestionTitle.textContent = "¿Qué obra de Dante Alighieri cuenta con tres partes, 'Infierno', 'Purgatorio' y 'Paraíso'?";
+    sectionQuestionBtnQuestionTitle.textContent = '';
     const sectionQuestionDiv = document.createElement('div');
     sectionQuestionDiv.classList.add("btnQuestion");
 
@@ -73,6 +78,7 @@ export class GameView {
     const sectionQuestionBtnSpanOption = document.createElement('span');
     sectionQuestionBtnSpanOption.classList.add("spanOption");
     sectionQuestionBtnSpanOption.textContent = "9";
+    sectionQuestionBtnQuestionA.addEventListener("onclick",this.question)
     sectionQuestionBtnQuestionA.appendChild(sectionQuestionBtnSpanLetter);
     sectionQuestionBtnQuestionA.appendChild(sectionQuestionBtnSpanOption);
 
@@ -217,7 +223,33 @@ export class GameView {
     container.append(sectionLose);
   }
 
+  // Reemplaza el contenido de la pregunta
+  updateQuestionContent() {
+    // Busca el boton donde esta la pregunta
+    const buttonTitle = document.querySelector("#question button.btnQuestionTitle");
+    if (buttonTitle) {
+      buttonTitle.textContent = this.question.question;
+    }
+    // Busca el boton de las respuestas
+    const buttonFirstAnswer = document.querySelector("#question > div > button:nth-child(1) > span.spanOption");
+    buttonFirstAnswer.textContent = this.question.answer[0].text;
+    const buttonSecondAnswer = document.querySelector("#question > div > button:nth-child(2) > span.spanOption");
+    buttonSecondAnswer.textContent = this.question.answer[1].text;
+    const buttonThirdAnswer = document.querySelector("#question > div > button:nth-child(3) > span.spanOption");
+    buttonThirdAnswer.textContent = this.question.answer[2].text;
+    const buttonFourthAnswer = document.querySelector("#question > div > button:nth-child(4) > span.spanOption");
+    buttonFourthAnswer.textContent = this.question.answer[3].text;
+  }
+
+  evaluateAnswer(){
+   
+  }
+
   displayCurrentSection(currentSection){
+    console.log(this.question);
+    if (currentSection === "question") {
+      this.updateQuestionContent();
+    }
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
       section.classList.remove('activeSection');

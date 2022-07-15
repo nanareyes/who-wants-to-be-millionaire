@@ -20,19 +20,21 @@ class Game {
 
   changeCurrentSection(currentSection){
     this.currentSection = currentSection;
-    this.gameView.displayCurrentSection(this.currentSection);
     if(currentSection === "question"){
       const question = this.getQuestion();
-      console.log(question);
+      this.gameView.setQuestion(question);
+
     }
+    this.gameView.displayCurrentSection(this.currentSection);
+
 
   }
   getQuestion(){
     const questionsArray = questions[this.currentQuestion]
     const numberQuestion = Math.floor(Math.random()*(questionsArray.length))
-    console.log(numberQuestion)
+    //console.log(numberQuestion)
     const question = questionsArray[numberQuestion];
-    console.log(question)
+    return question;
   }
 
 }
