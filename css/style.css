@@ -1,0 +1,41 @@
+#container{
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+#intro{
+  background-image: url(../img/frame.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 95vw;
+  height: 95vh;
+  text-align: center;
+}
+#intro h1{
+  color:#fff;
+  font-size: 4.5rem;
+  padding-top: 15vh;
+  width: 50vw;
+  margin: 0 auto;
+}
+.btnIntro{
+  width: 16vw;
+  padding: 1.5vh 0;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 21vh;
+}
+#start-question{
+  background-image: url(../img/frameQuestions.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.btn{
+  background: #a276ba;
+  border: 4rem #a53bd3;
+  border-radius: 4rem;
+  
+}
