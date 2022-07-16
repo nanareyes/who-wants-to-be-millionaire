@@ -29,12 +29,12 @@ export const questions = [
       "title": "¿Qué tipo de competición es el Giro de Italia?",
       "answer": [
         {
-          "text": "Una Carrera Ciclistica",
-          "correct": true
-        },
-        {
           "text": "Una Competición De Vela",
           "correct": false
+        },
+        {
+          "text": "Una Carrera Ciclistica",
+          "correct": true
         },
         {
           "text": "Un Maratón",
@@ -53,16 +53,16 @@ export const questions = [
       "title": "¿Dónde se encuentra la cordillera de Los Andes?",
       "answer": [
         {
-          "text": "América",
-          "correct": true
-        },
-        {
           "text": "Europa",
           "correct": false
         },
         {
           "text": "Asia",
           "correct": false
+        },
+        {
+          "text": "América",
+          "correct": true
         },
         {
           "text": "Oceanía",
@@ -77,10 +77,6 @@ export const questions = [
       "title": "¿Qué odia Mafalda?",
       "answer": [
         {
-          "text": "La sopa",
-          "correct": true
-        },
-        {
           "text": "El ruido",
           "correct": false
         },
@@ -91,6 +87,10 @@ export const questions = [
         {
           "text": "A sus padres",
           "correct": false
+        },
+        {
+          "text": "La sopa",
+          "correct": true
         }
       ],
       "img": "https://images.unsplash.com/photo-1638096877653-477ef498b1fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFmYWxkYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
@@ -127,12 +127,12 @@ export const questions = [
       "title": "filósofo que dijo 'solo sé que no sé nada'",
       "answer": [
         {
-          "text": "Sócrates",
-          "correct": true
-        },
-        {
           "text": "Edipo",
           "correct": false
+        },
+        {
+          "text": "Sócrates",
+          "correct": true
         },
         {
           "text": "Arquímedes",
@@ -151,16 +151,16 @@ export const questions = [
       "title": "¿Qué obra de Dante Alighieri cuenta con tres partes, 'Infierno', 'Purgatorio' y 'Paraíso'?",
       "answer": [
         {
-          "text": "Divina Comedia",
-          "correct": true
-        },
-        {
           "text": "El Infierno",
           "correct": false
         },
         {
           "text": "Las 3 Delicias",
           "correct": false
+        },
+        {
+          "text": "Divina Comedia",
+          "correct": true
         },
         {
           "text": "Sobrenatural",
@@ -175,10 +175,6 @@ export const questions = [
       "title": "famosa artista que estaba casada con su colega, Diego Rivera",
       "answer": [
         {
-          "text": "Frida Kahlo",
-          "correct": true
-        },
-        {
           "text": "Artemisia Gentileschi",
           "correct": false
         },
@@ -189,6 +185,10 @@ export const questions = [
         {
           "text": "Camille Claudel",
           "correct": false
+        },
+        {
+          "text": "Frida Kahlo",
+          "correct": true
         }
       ],
       "img": "https://images.unsplash.com/photo-1640622299541-8c8ab8a098f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MXx8YXJ0aXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
@@ -223,12 +223,12 @@ export const questions = [
       "title": "¿Cómo se mide la fuerza del viento en el mar?",
       "answer": [
         {
-          "text": "Nudos",
-          "correct": true
-        },
-        {
           "text": "Pies",
           "correct": false
+        },
+        {
+          "text": "Nudos",
+          "correct": true
         },
         {
           "text": "Zancadas",
@@ -273,12 +273,12 @@ export const questions = [
       "title": "¿Cuál es el país de origen del futbolista Lionel Messi?",
       "answer": [
         {
-          "text": "Argentina",
-          "correct": true
-        },
-        {
           "text": "España",
           "correct": false
+        },
+        {
+          "text": "Argentina",
+          "correct": true
         },
         {
           "text": "Brasil",
@@ -297,16 +297,16 @@ export const questions = [
       "title": " ¿De qué estaba fabricado originalmente el maquillaje blanco de las Geishas?",
       "answer": [
         {
-          "text": "Plomo",
-          "correct": true
-        },
-        {
           "text": "Harina",
           "correct": false
         },
         {
           "text": "Arroz Molido",
           "correct": false
+        },
+        {
+          "text": "Plomo",
+          "correct": true
         },
         {
           "text": "Flores De Loto",
@@ -321,10 +321,6 @@ export const questions = [
       "title": "¿Qué país fue dirigido por Stalin?",
       "answer": [
         {
-          "text": "Unión Soviética",
-          "correct": true
-        },
-        {
           "text": "Cuba",
           "correct": false
         },
@@ -335,6 +331,10 @@ export const questions = [
         {
           "text": "Polonia",
           "correct": false
+        },
+        {
+          "text": "Unión Soviética",
+          "correct": true
         }
       ],
       "img": "https://media.istockphoto.com/photos/russian-house-of-soviets-lenin-on-moscow-square-st-petersburg-picture-id490431686?b=1&k=20&m=490431686&s=170667a&w=0&h=-0Wzuxbn7DcxSkW-Q9YEpZ0Si5i8lloLNaloAkS5R4k=",
@@ -344,10 +344,6 @@ export const questions = [
       "category": "Ciencia y técnología",
       "title": "¿Qué números representa el sistema binario?",
       "answer": [
-        {
-          "text": "Los 0 y  1",
-          "correct": true
-        },
         {
           "text": "Solo los 1",
           "correct": false
@@ -359,6 +355,10 @@ export const questions = [
         {
           "text": "Todos los números",
           "correct": false
+        },
+        {
+          "text": "Los 0 y  1",
+          "correct": true
         }
       ],
       "img": "https://media.istockphoto.com/photos/an-abstract-blue-pattern-with-numbers-picture-id178895760?b=1&k=20&m=178895760&s=170667a&w=0&h=lfh8zl1AloSdEH63b-HQIN4t2zDTtN4oCpANGgwgIpA=",
@@ -371,12 +371,12 @@ export const questions = [
       "title": "¿Qué son los \"julios\"?",
       "answer": [
         {
-          "text": "Magnitud De La Energía, Trabajo Y Calor",
-          "correct": true
-        },
-        {
           "text": "Magnitud Para El Calor Del Sol",
           "correct": false
+        },
+        {
+          "text": "Magnitud De La Energía, Trabajo Y Calor",
+          "correct": true
         },
         {
           "text": "El Mes Más Frío Del Invierno",
@@ -419,16 +419,16 @@ export const questions = [
       "title": "¿Qué separa las franjas de Gaza y Cisjordania?",
       "answer": [
         {
-          "text": "Israel",
-          "correct": true
-        },
-        {
           "text": "Un Río",
           "correct": false
         },
         {
           "text": "Nada",
           "correct": false
+        },
+        {
+          "text": "Israel",
+          "correct": true
         },
         {
           "text": "Un Muro",
@@ -443,10 +443,6 @@ export const questions = [
       "title": "El Renacimiento marcó el inicio de la Edad…",
       "answer": [
         {
-          "text": "Moderna",
-          "correct": true
-        },
-        {
           "text": "Antigüedad Clásica",
           "correct": false
         },
@@ -457,6 +453,10 @@ export const questions = [
         {
           "text": "Media",
           "correct": false
+        },
+        {
+          "text": "Moderna",
+          "correct": true
         }
       ],
       "img": "https://cdn.pixabay.com/photo/2021/08/20/14/53/monastery-6560623__480.jpg",
@@ -467,16 +467,16 @@ export const questions = [
       "title": "¿Cuál de las grandes montañas ha sido escalada más veces?",
       "answer": [
         {
-          "text": "El Everest",
-          "correct": true
-        },
-        {
           "text": "El K2",
           "correct": false
         },
         {
           "text": "El Annapurna I",
           "correct": false
+        },
+        {
+          "text": "El Everest",
+          "correct": true
         },
         {
           "text": "El Annapurna II",
@@ -493,12 +493,12 @@ export const questions = [
       "title": " ¿Qué colores tiene la bandera de Irak?",
       "answer": [
         {
-          "text": "Rojo, Blanco, Verde Y Negro",
-          "correct": true
-        },
-        {
           "text": "Verde, Blanco, Azul Y Rojo",
           "correct": false
+        },
+        {
+          "text": "Rojo, Blanco, Verde Y Negro",
+          "correct": true
         },
         {
           "text": "Negro, Blanco Y Azul",
@@ -541,10 +541,6 @@ export const questions = [
       "title": " ¿Cuál es la religión mayoritaria enn la India?",
       "answer": [
         {
-          "text": "Hinduismo",
-          "correct": true
-        },
-        {
           "text": "Budista",
           "correct": false
         },
@@ -555,6 +551,10 @@ export const questions = [
         {
           "text": "Jainismo",
           "correct": false
+        },
+        {
+          "text": "Hinduismo",
+          "correct": true
         }
       ],
       "img": "https://images.unsplash.com/photo-1579215176023-00341ea5ea67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cmVsaWdpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
@@ -565,12 +565,12 @@ export const questions = [
       "title": "¿Cuántos puntos valen un tiro libre encestado en baloncesto?",
       "answer": [
         {
-          "text": "Uno",
-          "correct": true
-        },
-        {
           "text": "Dos",
           "correct": false
+        },
+        {
+          "text": "Uno",
+          "correct": true
         },
         {
           "text": "Tres",
@@ -589,16 +589,16 @@ export const questions = [
       "title": " ¿María Antonieta fue reina de qué país?",
       "answer": [
         {
-          "text": "Francia",
-          "correct": true
-        },
-        {
           "text": "Nunca Fue Reina",
           "correct": false
         },
         {
           "text": "Países Bajos",
           "correct": false
+        },
+        {
+          "text": "Francia",
+          "correct": true
         },
         {
           "text": "Reino Unido",

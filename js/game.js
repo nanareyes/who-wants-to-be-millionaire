@@ -49,7 +49,6 @@ class Game {
   getQuestion() {
     const questionsArray = questions[this.gameState.questionLevel];
     const numberQuestion = Math.floor(Math.random() * questionsArray.length);
-    //console.log(numberQuestion)
     return questionsArray[numberQuestion];
   }
 
