@@ -122,16 +122,16 @@ section{
   font-weight: bold;
   padding-right: 0.5rem;
 }
+.btnQuestionAnswer{
+  background: #f9a04a;
+  color: #000;
+}
 .btnQuestionAnswerOk{
   background: #a0fa47;
   color: #000;
 }
 .btnQuestionAnswerWrong{
   background: #ff5f56;
-  color: #000;
-}
-.btnQuestionAnswer{
-  background: #f9a04a;
   color: #000;
 }
 #win h1,#lose h1{

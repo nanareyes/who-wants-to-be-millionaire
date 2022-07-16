@@ -75,6 +75,7 @@ export class GameView {
     const sectionQuestionBtnSpanLetter = document.createElement('span');
     sectionQuestionBtnSpanLetter.classList.add("btnSpanLetter");
     sectionQuestionBtnSpanLetter.textContent = "A";
+    sectionQuestionBtnQuestionA.addEventListener("click", ()=>{this.gameState.setSelectedAnswer(0)})
     const sectionQuestionBtnSpanOption = document.createElement('span');
     sectionQuestionBtnSpanOption.classList.add("spanOption");
     sectionQuestionBtnSpanOption.textContent = "9";
@@ -87,6 +88,7 @@ export class GameView {
     const sectionQuestionBtnSpanLetterB = document.createElement('span');
     sectionQuestionBtnSpanLetterB.classList.add("btnSpanLetter");
     sectionQuestionBtnSpanLetterB.textContent = "B";
+    sectionQuestionBtnQuestionB.addEventListener("click", ()=>{this.gameState.setSelectedAnswer(1)})
     const sectionQuestionBtnSpanOptionB = document.createElement('span');
     sectionQuestionBtnSpanOptionB.classList.add("spanOption");
     sectionQuestionBtnSpanOptionB.textContent = "13";
@@ -98,6 +100,7 @@ export class GameView {
     const sectionQuestionBtnSpanLetterC = document.createElement('span');
     sectionQuestionBtnSpanLetterC.classList.add("btnSpanLetter");
     sectionQuestionBtnSpanLetterC.textContent = "C";
+    sectionQuestionBtnQuestionC.addEventListener("click", ()=>{this.gameState.setSelectedAnswer(2)})
     const sectionQuestionBtnSpanOptionC = document.createElement('span');
     sectionQuestionBtnSpanOptionC.classList.add("spanOption");
     sectionQuestionBtnSpanOptionC.textContent = "10";
@@ -109,6 +112,7 @@ export class GameView {
     const sectionQuestionBtnSpanLetterD = document.createElement('span');
     sectionQuestionBtnSpanLetterD.classList.add("btnSpanLetter");
     sectionQuestionBtnSpanLetterD.textContent = "D";
+    sectionQuestionBtnQuestionD.addEventListener("click", ()=>{this.gameState.setSelectedAnswer(3)})
     const sectionQuestionBtnSpanOptionD = document.createElement('span');
     sectionQuestionBtnSpanOptionD.classList.add("spanOption");
     sectionQuestionBtnSpanOptionD.textContent = "11";
@@ -118,7 +122,6 @@ export class GameView {
 
     sectionQuestion.append(sectionQuestionTitleH1,sectionQuestionBtnQuestionTitle,sectionQuestionDiv)
     container.append(sectionQuestion)
-
   }
 
   createViewAnswer(){
@@ -134,7 +137,7 @@ export class GameView {
     sectionAnswerDiv.classList.add("btnQuestion");
 
     const sectionAnswerBtnQuestionA = document.createElement('button');
-    sectionAnswerBtnQuestionA.classList.add("btnGame","btnQuestionAnswerOk");
+    sectionAnswerBtnQuestionA.classList.add("btnGame","btnQuestionAnswer");
     const sectionAnswerBtnSpanLetter = document.createElement('span');
     sectionAnswerBtnSpanLetter.classList.add("btnSpanLetter");
     sectionAnswerBtnSpanLetter.textContent = "A";
@@ -145,7 +148,7 @@ export class GameView {
     sectionAnswerBtnQuestionA.appendChild(sectionAnswerBtnSpanOption);
 
     const sectionAnswerBtnQuestionB = document.createElement('button');
-    sectionAnswerBtnQuestionB.classList.add("btnGame","btnQuestionAnswerWrong");
+    sectionAnswerBtnQuestionB.classList.add("btnGame","btnQuestionAnswer");
     const sectionAnswerBtnSpanLetterB = document.createElement('span');
     sectionAnswerBtnSpanLetterB.classList.add("btnSpanLetter");
     sectionAnswerBtnSpanLetterB.textContent = "B";
@@ -232,14 +235,43 @@ export class GameView {
       buttonTitle.textContent = question.title;
     }
     // Busca el boton de las respuestas
-    const buttonFirstAnswer = document.querySelector("#question > div > button:nth-child(1) > span.spanOption");
-    buttonFirstAnswer.textContent = question.answer[0].text;
-    const buttonSecondAnswer = document.querySelector("#question > div > button:nth-child(2) > span.spanOption");
-    buttonSecondAnswer.textContent = question.answer[1].text;
-    const buttonThirdAnswer = document.querySelector("#question > div > button:nth-child(3) > span.spanOption");
-    buttonThirdAnswer.textContent = question.answer[2].text;
-    const buttonFourthAnswer = document.querySelector("#question > div > button:nth-child(4) > span.spanOption");
-    buttonFourthAnswer.textContent = question.answer[3].text;
+    const spanFirstAnswer = document.querySelector("#question > div > button:nth-child(1) > span.spanOption");
+    spanFirstAnswer.textContent = question.answer[0].text;
+    const spanSecondAnswer = document.querySelector("#question > div > button:nth-child(2) > span.spanOption");
+    spanSecondAnswer.textContent = question.answer[1].text;
+    const spanThirdAnswer = document.querySelector("#question > div > button:nth-child(3) > span.spanOption");
+    spanThirdAnswer.textContent = question.answer[2].text;
+    const spanFourthAnswer = document.querySelector("#question > div > button:nth-child(4) > span.spanOption");
+    spanFourthAnswer.textContent = question.answer[3].text;
+  }
+  updateAnswerContent() {
+    // Busca el boton donde esta la pregunta
+    const buttonTitle = document.querySelector("#answer button.btnQuestionTitle");
+    const question = this.gameState.question;
+    if (buttonTitle) {
+      buttonTitle.textContent = question.title;
+    }
+    // Busca el boton de las respuestas
+    const spanFirstAnswer = document.querySelector("#answer > div > button:nth-child(1) > span.spanOption");
+    spanFirstAnswer.textContent = question.answer[0].text;
+    const spanSecondAnswer = document.querySelector("#answer > div > button:nth-child(2) > span.spanOption");
+    spanSecondAnswer.textContent = question.answer[1].text;
+    const spanThirdAnswer = document.querySelector("#answer > div > button:nth-child(3) > span.spanOption");
+    spanThirdAnswer.textContent = question.answer[2].text;
+    const spanFourthAnswer = document.querySelector("#answer > div > button:nth-child(4) > span.spanOption");
+    spanFourthAnswer.textContent = question.answer[3].text;
+
+    
+    document.querySelectorAll("#answer > div > button").forEach(btn=>{
+      btn.classList.remove('btnQuestionAnswerOk','btnQuestionAnswerWrong');
+    });
+    const btnAnswer = document.querySelector(`#answer > div > button:nth-child(${this.gameState.selectedAnswer+1})`);
+    btnAnswer.classList.add(this.gameState.isCorrectAnswer ? 'btnQuestionAnswerOk' : 'btnQuestionAnswerWrong')
+    if(!this.gameState.isCorrectAnswer){
+      const correctAnswer = this.gameState.question.answer.findIndex(answer=> answer.correct);
+      const btnCorrectAnswer = document.querySelector(`#answer > div > button:nth-child(${correctAnswer+1})`);
+      btnCorrectAnswer.classList.add("btnQuestionAnswerOk");
+    }
   }
 
 
@@ -248,6 +280,10 @@ export class GameView {
     if (this.gameState.currentSection === "question") {
       this.updateQuestionContent();
     }
+    if (this.gameState.currentSection === "answer") {
+      this.updateAnswerContent();
+    }
+   
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
       section.classList.remove('activeSection');
