@@ -20,9 +20,12 @@ class Game {
       onSetCurrentSection: () => {
         this.changeCurrentSection();
       },
-      onSetSelectedAnswer:()=>{
+      onSetSelectedAnswer: () => {
         this.validateAnswer();
-      }
+      },
+      onPlayNext: () => {
+        this.playNext();
+      },
     };
     this.gameState.setEvents(events);
   }
@@ -40,7 +43,7 @@ class Game {
     this.gameState.setIsCorrectAnswer(
       answers[this.gameState.selectedAnswer].correct
     );
-    this.gameState.setCurrentSection('answer')
+    this.gameState.setCurrentSection("answer");
   }
 
   getQuestion() {
@@ -48,6 +51,19 @@ class Game {
     const numberQuestion = Math.floor(Math.random() * questionsArray.length);
     //console.log(numberQuestion)
     return questionsArray[numberQuestion];
+  }
+
+  playNext() {
+    if (this.gameState.isCorrectAnswer) {
+      if (this.gameState.questionLevel === 4) {
+        this.gameState.setCurrentSection("win");
+      } else {
+        this.gameState.setQuestionLevel(this.gameState.questionLevel + 1);
+        this.gameState.setCurrentSection("start-question");
+      }
+    } else {
+      this.gameState.setCurrentSection("lose");
+    }
   }
 }
 const game = new Game();

@@ -44,14 +44,14 @@ export class GameView {
     const sectionStartQuestionBtnNumber = document.createElement('button');
     sectionStartQuestionBtnNumber.classList.add("btnGame", "btnQuestionNumber");
     sectionStartQuestionBtnNumber.textContent = 'Pregunta 1';
-    const sectionStartQuestionBtnPrice = document.createElement('button');
-    sectionStartQuestionBtnPrice.classList.add("btnGame", "btnQuestionPrice");
-    sectionStartQuestionBtnPrice.textContent = '$100.000';
+    const sectionStartQuestionBtnPrize = document.createElement('button');
+    sectionStartQuestionBtnPrize.classList.add("btnGame", "btnQuestionPrize");
+    sectionStartQuestionBtnPrize.textContent = '$100.000';
     const sectionStartQuestionBtnPlay = document.createElement('button');
     sectionStartQuestionBtnPlay.classList.add("btnGame", "btnQuestionPlay");
     sectionStartQuestionBtnPlay.textContent = 'Jugar';
     sectionStartQuestionBtnPlay.addEventListener("click", () => {this.gameState.setCurrentSection("question")})
-    sectionStartQuestionDiv.append(sectionStartQuestionBtnNumber,sectionStartQuestionBtnPrice,sectionStartQuestionBtnPlay)
+    sectionStartQuestionDiv.append(sectionStartQuestionBtnNumber,sectionStartQuestionBtnPrize,sectionStartQuestionBtnPlay)
     sectionStartQuestion.append(sectionStartQuestionTitleH1, sectionStartQuestionDiv);
 
     container.append(sectionStartQuestion);
@@ -183,7 +183,7 @@ export class GameView {
     const sectionAnswerBtnPlay = document.createElement('button');
     sectionAnswerBtnPlay.classList.add("btn","btnQuestionPlay");
     sectionAnswerBtnPlay.textContent = "Siguiente";
-    sectionAnswerBtnPlay.addEventListener("click", () => {this.gameState.setCurrentSection("start-question")})
+    sectionAnswerBtnPlay.addEventListener("click", () => {this.gameState.events.onPlayNext()})
 
     sectionAnswerDiv.append(sectionAnswerBtnQuestionA,sectionAnswerBtnQuestionB,sectionAnswerBtnQuestionC,sectionAnswerBtnQuestionD);
     sectionAnswer.append(sectionAnswerTitleH1,sectionAnswernBtnQuestionTitle,sectionAnswerDiv, sectionAnswerBtnPlay)
@@ -200,11 +200,14 @@ export class GameView {
     sectionWinDiv.classList.add("btnStartQuestion");
     const sectionWinBtn = document.createElement('button');
     sectionWinBtn.classList.add("btnGame", "btnWin");
-    sectionWinBtn.textContent = "$100.000.000"
+    sectionWinBtn.textContent = `$ ${this.gameState.prizes[4]}`;
     const sectionWinBtnPlayAgain = document.createElement("button");
     sectionWinBtnPlayAgain.classList.add("btn", "btnPlayAgain");
     sectionWinBtnPlayAgain.textContent = "Volver a empezar";
-    sectionWinBtnPlayAgain.addEventListener("click", () => {this.gameState.setCurrentSection("intro")})
+    sectionWinBtnPlayAgain.addEventListener("click", () => {
+      this.gameState.reset();
+      this.gameState.setCurrentSection("intro")
+    })
 
     sectionWinDiv.append(sectionWinBtn);
     sectionWin.append(sectionWinTitleH1,sectionWinDiv,sectionWinBtnPlayAgain);
@@ -220,7 +223,10 @@ export class GameView {
     const sectionLoseBtnPlayAgain = document.createElement("button");
     sectionLoseBtnPlayAgain.classList.add("btn", "btnPlayAgain");
     sectionLoseBtnPlayAgain.textContent = "Volver a empezar";
-    sectionLoseBtnPlayAgain.addEventListener("click", () => {this.gameState.setCurrentSection("intro")})
+    sectionLoseBtnPlayAgain.addEventListener("click", () => {
+      this.gameState.reset();
+      this.gameState.setCurrentSection("intro")
+    })
 
     sectionLose.append(sectionLoseTitleH1,sectionLoseBtnPlayAgain);
     container.append(sectionLose);
@@ -273,7 +279,12 @@ export class GameView {
       btnCorrectAnswer.classList.add("btnQuestionAnswerOk");
     }
   }
-
+  updateStartQuestionContent(){
+    const btnQuestionNumber = document.querySelector("#start-question > div > button.btnGame.btnQuestionNumber");
+    btnQuestionNumber.textContent = `Pregunta ${this.gameState.questionLevel + 1} `
+    const btnQuestionPrize = document.querySelector("#start-question > div > button.btnGame.btnQuestionPrize");
+    btnQuestionPrize.textContent = `$ ${this.gameState.prizes[this.gameState.questionLevel]}`
+  }
 
   displayCurrentSection(){
     console.log(this.question);
@@ -283,7 +294,10 @@ export class GameView {
     if (this.gameState.currentSection === "answer") {
       this.updateAnswerContent();
     }
-   
+    if(this.gameState.currentSection === "start-question"){
+      this.updateStartQuestionContent();
+    }
+
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
       section.classList.remove('activeSection');
