@@ -1,7 +1,9 @@
 
 # Who wants to be millionaire - js #
 
-Este es un proyecto en JavaScript con manejo del DOM y con persistencia de datos en el local storage.
+<img src="./img/frame.png" style="height:100%;width:100%" />
+
+Este es un proyecto de preguntas y respuestas en JavaScript con manejo del DOM y persistencia de datos en el local storage.
 
 
 
