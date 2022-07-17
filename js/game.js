@@ -31,7 +31,7 @@ class Game {
   }
 
   changeCurrentSection() {
-    if (this.gameState.currentSection === "question") {
+    if (this.gameState.getCurrentSection() === "question") {
       const question = this.getQuestion();
       this.gameState.setQuestion(question);
     }
@@ -39,25 +39,25 @@ class Game {
   }
 
   validateAnswer() {
-    const answers = this.gameState.question.answer;
+    const answers = this.gameState.getQuestion().answer;
     this.gameState.setIsCorrectAnswer(
-      answers[this.gameState.selectedAnswer].correct
+      answers[this.gameState.getSelectedAnswer()].correct
     );
     this.gameState.setCurrentSection("answer");
   }
 
   getQuestion() {
-    const questionsArray = questions[this.gameState.questionLevel];
+    const questionsArray = questions[this.gameState.getQuestionLevel()];
     const numberQuestion = Math.floor(Math.random() * questionsArray.length);
     return questionsArray[numberQuestion];
   }
 
   playNext() {
-    if (this.gameState.isCorrectAnswer) {
-      if (this.gameState.questionLevel === 4) {
+    if (this.gameState.getIsCorrectAnswer()) {
+      if (this.gameState.getQuestionLevel() === 4) {
         this.gameState.setCurrentSection("win");
       } else {
-        this.gameState.setQuestionLevel(this.gameState.questionLevel + 1);
+        this.gameState.setQuestionLevel(this.gameState.getQuestionLevel() + 1);
         this.gameState.setCurrentSection("start-question");
       }
     } else {
