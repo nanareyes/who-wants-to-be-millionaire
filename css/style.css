@@ -151,10 +151,12 @@ section{
     margin-top: 13vh;
   }
 .btnPlayAgain{
-  width: 12vw;
-  height: 9vh;
+  width: 16vw;
+  height: 5vh;
   margin-top: 8vh;
   font-size: 1.5rem;
+  width: 16vw;
+  padding: 1.5vh;
 }
 
 #lose .btnPlayAgain{
