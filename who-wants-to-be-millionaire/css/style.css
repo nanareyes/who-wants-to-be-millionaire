@@ -1,0 +1,162 @@
+#container{
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+section{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 95vw;
+  height: 95vh;
+  text-align: center;
+}
+#intro,#win, #lose{
+  background-image: url(../img/frame.png);
+}
+#start-question, #question, #answer{
+  background-image: url(../img/frameQuestions.png);
+}
+.inactiveSection{
+  display:none;
+}
+.activeSection{
+  display: block;
+}
+#intro h1{
+  color:#fff;
+  font-size: 4.5rem;
+  padding-top: 15vh;
+  width: 50vw;
+  margin: 0 auto;
+}
+.btnIntro{
+  width: 16vw;
+  padding: 1.5vh 0;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 21vh;
+}
+
+#start-question h1{
+  color:#fff;
+  font-size: 3rem;
+  padding-top: 20vh;
+  width: 50vw;
+  font-weight: lighter;
+  margin: 0 auto;
+}
+.btnQuestionNumber{
+  width: 45vw;
+  height: 10vh;
+  margin-top: 15vh;
+  font-size: 3rem;
+}
+.btnQuestionPrize{
+  width: 20vw;
+  height: 7vh;
+  margin-top: 8vh;
+  font-size: 2.5rem;
+}
+.btnQuestionPlay{
+  width: 10vw;
+  height: 7vh;
+  margin-top: 5vh;
+  font-size: 2rem;
+}
+.btn{
+  background: #a276ba;
+  border: 4rem #a53bd3;
+  border-radius: 4rem;
+  color: #fff;
+}
+.btnGame{
+  background:#6c9df5 ;
+  border: 10rem #8fc5f9;
+  border-radius: 4rem;
+  color: #fff;
+}
+.btnStartQuestion{
+  display:grid;
+  grid-template-rows: auto;
+  justify-items: center;
+  clear: both;
+  position: relative;
+  width: 50vw;
+  margin: 0 auto;
+}
+#question h1, #answer h1{
+  color:#fff;
+  font-size: 3rem;
+  padding-top: 10vh;
+  width: 50vw;
+  font-weight: lighter;
+  margin: 0 auto;
+}
+.btnQuestion{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(20vw, 25vw));
+  grid-template-rows: repeat(2, minmax(6vh, 9vh));
+  grid-gap:3rem;
+  width: 50vw;
+  margin: 5vh auto;
+}
+.btnQuestionTitle{
+  width: 50vw;
+  height: 12vh;
+  margin-top: 10vh;
+  font-size: 2rem;
+}
+.btnOption{
+  font-size: 1.5rem;
+  text-align: left;
+  padding-left: 1.5rem;
+}
+.spanOption{
+  font-size: 1.5rem;
+  text-align: left;
+  padding-left: 1.5rem;
+}
+.btnOption .btnSpanLetter{
+  font-weight: bold;
+  padding-right: 0.5rem;
+}
+.btnQuestionAnswer{
+  background: #f9a04a;
+  color: #000;
+}
+.btnQuestionAnswerOk{
+  background: #a0fa47;
+  color: #000;
+}
+.btnQuestionAnswerWrong{
+  background: #ff5f56;
+  color: #000;
+}
+#win h1,#lose h1{
+  color:#fff;
+  font-size: 5.5rem;
+  padding-top: 30vh;
+  width: 50vw;
+  margin: 0 auto;
+}
+  .btnWin{
+    background: #e3b15a;
+    width: 25vw;
+    padding: 1.5vh 0;
+    font-size: 2rem;
+    color: #000;
+    font-weight: bold;
+    margin-top: 13vh;
+  }
+.btnPlayAgain{
+  width: 12vw;
+  height: 5vh;
+  margin-top: 8vh;
+  font-size: 1.5rem;
+}
+
+#lose .btnPlayAgain{
+  margin-top: 13vh;
+}
