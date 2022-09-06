@@ -1,88 +1,100 @@
-body{
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   height: 100vh;
   width: 100vw;
 }
-#container{
+#container {
   margin: 0 auto;
   box-sizing: border-box;
   text-align: center;
 }
-section{
+section {
+  display: flex;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
-  width: 95vw;
-  height: 95vh;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
   text-align: center;
 }
-#intro,#win, #lose{
+#intro,
+#win,
+#lose {
   background-image: url(../img/frame.png);
 }
-#start-question, #question, #answer{
+#start-question,
+#question,
+#answer {
   background-image: url(../img/frameQuestions.png);
 }
-.inactiveSection{
-  display:none;
+.inactiveSection {
+  display: none;
 }
-.activeSection{
-  display: block;
+.activeSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-#intro h1{
-  color:#fff;
+#intro h1 {
+  color: #fff;
   font-size: 4.5rem;
-  padding-top: 15vh;
   width: 50vw;
   margin: 0 auto;
+  margin-bottom: 5vh;
 }
-.btnIntro{
-  width: 16vw;
-  padding: 1.5vh 0;
+.btnIntro {
+  width: 20vw;
+  padding: 3vh 0;
   font-size: 2rem;
   color: #fff;
   font-weight: bold;
-  margin-top: 21vh;
+  position: relative;
+  top: -5vh;
 }
 
-#start-question h1{
-  color:#fff;
+#start-question h1 {
+  color: #fff;
   font-size: 3rem;
-  padding-top: 20vh;
+  padding-top: 3vh;
   width: 50vw;
   font-weight: lighter;
   margin: 0 auto;
 }
-.btnQuestionNumber{
+.btnQuestionNumber {
   width: 45vw;
-  height: 10vh;
-  margin-top: 15vh;
-  font-size: 3rem;
-}
-.btnQuestionPrize{
-  width: 20vw;
-  height: 7vh;
-  margin-top: 8vh;
+  height: 15vh;
+  margin-top: 5vh;
   font-size: 2.5rem;
 }
-.btnQuestionPlay{
-  width: 10vw;
-  height: 7vh;
-  margin-top: 5vh;
+.btnQuestionPrize {
+  width: 20vw;
+  height: 12vh;
+  margin-top: 2vh;
   font-size: 2rem;
 }
-.btn{
+.btnQuestionPlay {
+  width: 15vw;
+  height: 10vh;
+  margin-top: 2vh;
+  font-size: 1.5rem;
+}
+.btn {
   background: #a276ba;
   border: 4rem #a53bd3;
   border-radius: 4rem;
   color: #fff;
 }
-.btnGame{
-  background:#6c9df5 ;
+.btnGame {
+  background: #6c9df5;
   border: 10rem #8fc5f9;
   border-radius: 4rem;
   color: #fff;
 }
-.btnStartQuestion{
-  display:grid;
+.btnStartQuestion {
+  display: grid;
   grid-template-rows: auto;
   justify-items: center;
   clear: both;
@@ -90,79 +102,197 @@ section{
   width: 50vw;
   margin: 0 auto;
 }
-#question h1, #answer h1{
-  color:#fff;
+#question h1,
+#answer h1 {
+  color: #fff;
   font-size: 3rem;
-  padding-top: 10vh;
+  padding-top: 2vh;
   width: 50vw;
   font-weight: lighter;
   margin: 0 auto;
 }
-.btnQuestion{
+.btnQuestion {
   display: grid;
-  grid-template-columns: repeat(2, minmax(20vw, 25vw));
+  grid-template-columns: repeat(2, minmax(25vw, 30vw));
   grid-template-rows: repeat(2, minmax(6vh, 9vh));
-  grid-gap:3rem;
-  width: 50vw;
-  margin: 5vh auto;
+  grid-gap: 2rem;
+  width: 60vw;
+  margin: 2vh auto;
+  padding-top: 2vh;
 }
-.btnQuestionTitle{
-  width: 50vw;
-  height: 12vh;
-  margin-top: 10vh;
-  font-size: 2rem;
+.btnQuestionTitle {
+  width: 60vw;
+  margin-top: 3vh;
+  font-size: 1.8rem;
 }
-.btnOption{
+.btnOption {
+  font-size: 1.2rem;
+  text-align: left;
+  padding-left: 1.5rem;
+}
+.spanOption {
   font-size: 1.5rem;
   text-align: left;
   padding-left: 1.5rem;
 }
-.spanOption{
-  font-size: 1.5rem;
-  text-align: left;
-  padding-left: 1.5rem;
-}
-.btnOption .btnSpanLetter{
+.btnOption .btnSpanLetter {
   font-weight: bold;
   padding-right: 0.5rem;
 }
-.btnQuestionAnswer{
+.btnQuestionAnswer {
   background: #f9a04a;
   color: #000;
 }
-.btnQuestionAnswerOk{
+.btnQuestionAnswerOk {
   background: #a0fa47;
   color: #000;
 }
-.btnQuestionAnswerWrong{
+.btnQuestionAnswerWrong {
   background: #ff5f56;
   color: #000;
 }
-#win h1,#lose h1{
-  color:#fff;
+#win h1,
+#lose h1 {
+  color: #fff;
   font-size: 5.5rem;
-  padding-top: 30vh;
+  padding-top: 10vh;
   width: 50vw;
   margin: 0 auto;
 }
-  .btnWin{
-    background: #e3b15a;
-    width: 25vw;
-    padding: 1.5vh 0;
-    font-size: 2rem;
-    color: #000;
-    font-weight: bold;
-    margin-top: 13vh;
-  }
-.btnPlayAgain{
-  width: 16vw;
-  height: 5vh;
+.btnWin {
+  background: #e3b15a;
+  width: 25vw;
+  padding: 2vh 0;
+  font-size: 2rem;
+  color: #000;
+  font-weight: bold;
+  position: relative;
+  top: 5vh;
+}
+.btnPlayAgain {
+  width: 18vw;
+  height: 8vh;
   margin-top: 8vh;
   font-size: 1.5rem;
   width: 16vw;
-  padding: 1.5vh;
+  padding: 2vh;
+  position: relative;
+  top: 2vh;
 }
 
-#lose .btnPlayAgain{
-  margin-top: 13vh;
+#lose .btnPlayAgain {
+  position: relative;
+  top: -8vh;
+}
+
+@media (max-width: 768px) {
+  #intro h1 {
+    font-size: 1.5rem;
+    padding-bottom: 5vh;
+  }
+  .btnIntro {
+    font-size: 1.2rem;
+    padding: 1vh;
+    top: -5vh;
+  }
+  #start-question h1 {
+    font-size: 2rem;
+  }
+  .btnQuestionNumber {
+    font-size: 1.8rem;
+  }
+  .btnQuestionPrize {
+    font-size: 1.5rem;
+  }
+  .btnQuestionPlay {
+    font-size: 1.2rem;
+  }
+  #question h1,
+  #answer h1 {
+    font-size: 2rem;
+  }
+  .btnQuestionTitle {
+    font-size: 1rem;
+  }
+  .btnOption {
+    font-size: 0.8rem;
+  }
+  .spanOption {
+    font-size: 1rem;
+  }
+
+  #win h1,
+  #lose h1 {
+    font-size: 2.8rem;
+  }
+  .btnWin {
+    font-size: 1.8rem;
+  }
+  .btnPlayAgain {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 425px) {
+  #intro h1 {
+    font-size: 1.5rem;
+    padding-bottom: 5vh;
+  }
+  .btnIntro {
+    font-size: 0.8rem;
+    padding: 2vh;
+    width: 25vh;
+    top: -5vh;
+  }
+  #start-question h1 {
+    font-size: 1.2rem;
+  }
+  .btnQuestionNumber {
+    font-size: 1rem;
+  }
+  .btnQuestionPrize {
+    font-size: 0.8rem;
+    width:30vw;
+  }
+  .btnQuestionPlay {
+    font-size: 0.8rem;
+  }
+  #question h1,
+  #answer h1 {
+    font-size: 1.2rem;
+  }
+  .btnQuestionTitle {
+    font-size: 0.8rem;
+    width: 70vw;
+  }
+  .btnOption {
+    font-size: 0.8rem;
+    height: 8vh;
+  }
+  .spanOption {
+    font-size: 0.8rem;
+  }
+
+  .btnQuestion {
+    display:flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+    width: 65vw;
+  }
+  .btnQuestionPlay {
+    width: 25vw;
+  }
+  #win h1,
+  #lose h1 {
+    font-size: 1.8rem;
+    padding-top: 2vh;
+  }
+  .btnWin {
+    font-size: 1rem;
+    width: 35vw
+    ;
+  }
+  .btnPlayAgain {
+    font-size: 0.5rem;
+    width: 25vw;
+  }
 }
