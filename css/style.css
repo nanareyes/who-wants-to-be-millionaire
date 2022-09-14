@@ -39,20 +39,22 @@ section {
   justify-content: center;
 }
 #intro h1 {
-  color: #fff;
-  font-size: 4.5rem;
-  width: 50vw;
+  color: #ffff;
+  font-size: 3.5rem;
+  padding-bottom: 2rem;
+  width: 60rem;
+  height: 8rem;
   margin: 0 auto;
-  margin-bottom: 5vh;
 }
 .btnIntro {
-  width: 20vw;
-  padding: 3vh 0;
+  width: 18rem;
+  height: 5rem;
+  padding: 1rem 0;
   font-size: 2rem;
   color: #fff;
   font-weight: bold;
   position: relative;
-  top: -5vh;
+  top: 0rem;
 }
 
 #start-question h1 {
@@ -84,13 +86,13 @@ section {
 .btn {
   background: #a276ba;
   border: 4rem #a53bd3;
-  border-radius: 2.5rem;
+  border-radius: 2rem;
   color: #fff;
 }
 .btnGame {
   background: #6c9df5;
   border: 10rem #8fc5f9;
-  border-radius: 2.5rem;
+  border-radius: 2rem;
   color: #fff;
 }
 .btnStartQuestion {
@@ -119,7 +121,7 @@ section {
   grid-template-rows: repeat(2, minmax(6rem, 9rem));
   grid-gap: 2rem;
   width: 40rem;
-  height: 7rem;
+  height: 14rem;
   margin: 2vh auto;
   padding-top: 2vh;
   justify-content: center;
@@ -162,45 +164,48 @@ section {
 #lose h1 {
   color: #fff;
   font-size: 5.5rem;
-  padding-top: 10vh;
-  width: 50vw;
+  padding-top: 4rem;
+  width: 50rem;
   margin: 0 auto;
 }
 .btnWin {
   background: #e3b15a;
-  width: 25vw;
-  padding: 2vh 0;
+  width:20rem;
+  height: 5rem;
+  padding: 1rem 0;
   font-size: 2rem;
   color: #000;
   font-weight: bold;
   position: relative;
-  top: 5vh;
+  top: 2.5rem;
 }
 .btnPlayAgain {
-  width: 18vw;
-  height: 8vh;
-  margin-top: 8vh;
+  width: 15rem;
+  height: 6vh;
+  margin-top: 3rem;
   font-size: 1.5rem;
-  width: 16vw;
   padding: 2vh;
   position: relative;
-  top: 2vh;
+  top: 0.5vh;
 }
 
 #lose .btnPlayAgain {
   position: relative;
-  top: -8vh;
+  top: 0rem;
 }
 
 @media (max-width: 768px) {
   #intro h1 {
-    font-size: 1.5rem;
-    padding-bottom: 5vh;
+    width: 40rem;
+    text-align: center;
+    font-size: 2rem;
+    justify-content: center;
+    padding-bottom: 0;
   }
   .btnIntro {
     font-size: 1.2rem;
-    padding: 1vh;
-    top: -5vh;
+    margin: 2rem;
+    top: 2rem;
   }
   #start-question h1 {
     font-size: 2rem;
@@ -234,6 +239,7 @@ section {
   }
   .btnWin {
     font-size: 1.8rem;
+    margin-top: 2rem;
   }
   .btnPlayAgain {
     font-size: 0.8rem;
@@ -241,27 +247,31 @@ section {
 }
 @media (max-width: 425px) {
   #intro h1 {
+    width: 20rem;
     font-size: 1.5rem;
-    padding-bottom: 5vh;
   }
   .btnIntro {
     font-size: 0.8rem;
-    padding: 2vh;
-    width: 25vh;
-    top: -5vh;
+    width: 15rem;
+    top: -0.5rem;
   }
   #start-question h1 {
     font-size: 1.2rem;
   }
   .btnQuestionNumber {
     font-size: 1rem;
+    width: 20rem;
+    height: 8rem;
   }
   .btnQuestionPrize {
     font-size: 0.8rem;
-    width:30vw;
+    width:15rem;
+    height: 5rem;
   }
   .btnQuestionPlay {
     font-size: 0.8rem;
+    width: 12rem;
+    height: 5rem;
   }
   #question h1,
   #answer h1 {
@@ -269,11 +279,12 @@ section {
   }
   .btnQuestionTitle {
     font-size: 0.8rem;
-    width: 70vw;
+    width: 20rem;
+    height: 6rem;
   }
   .btnOption {
     font-size: 0.8rem;
-    height: 8vh;
+    height: 8rem;
   }
   .spanOption {
     font-size: 0.8rem;
@@ -283,23 +294,30 @@ section {
     display:flex;
     flex-direction: column;
     grid-gap: 1rem;
-    width: 65vw;
+    width: 20rem;
+    height: 12rem;
+  }
+  .btnQuestionAnswer{
+    height: 3rem;
   }
   .btnQuestionPlay {
-    width: 25vw;
+    width: 12rem;
+    height: 3rem;
   }
   #win h1,
   #lose h1 {
-    font-size: 1.8rem;
-    padding-top: 2vh;
+    width: 20rem;
+    font-size: 1.5rem;
   }
   .btnWin {
     font-size: 1rem;
-    width: 35vw
-    ;
+    width: 14rem;
+    height: 4rem;
+    margin-top: 5rem;
   }
   .btnPlayAgain {
-    font-size: 0.5rem;
-    width: 25vw;
+    font-size: 0.8rem;
+    width: 12rem;
+    height: 3rem;
   }
 }
