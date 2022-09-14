@@ -64,39 +64,39 @@ section {
   margin: 0 auto;
 }
 .btnQuestionNumber {
-  width: 45vw;
-  height: 15vh;
-  margin-top: 5vh;
+  width: 40rem;
+  height: 8rem;
+  margin-top: 3rem;
   font-size: 2.5rem;
 }
 .btnQuestionPrize {
-  width: 20vw;
-  height: 12vh;
-  margin-top: 2vh;
+  width: 25rem;
+  height: 6rem;
+  margin-top: 2rem;
   font-size: 2rem;
 }
 .btnQuestionPlay {
-  width: 15vw;
-  height: 10vh;
-  margin-top: 2vh;
+  width: 20rem;
+  height: 5rem;
+  margin-top: 2rem;
   font-size: 1.5rem;
 }
 .btn {
   background: #a276ba;
   border: 4rem #a53bd3;
-  border-radius: 4rem;
+  border-radius: 2.5rem;
   color: #fff;
 }
 .btnGame {
   background: #6c9df5;
   border: 10rem #8fc5f9;
-  border-radius: 4rem;
+  border-radius: 2.5rem;
   color: #fff;
 }
 .btnStartQuestion {
-  display: grid;
-  grid-template-rows: auto;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   clear: both;
   position: relative;
   width: 50vw;
@@ -104,6 +104,8 @@ section {
 }
 #question h1,
 #answer h1 {
+  display: flex;
+  flex-direction: column;
   color: #fff;
   font-size: 3rem;
   padding-top: 2vh;
@@ -113,15 +115,20 @@ section {
 }
 .btnQuestion {
   display: grid;
-  grid-template-columns: repeat(2, minmax(25vw, 30vw));
-  grid-template-rows: repeat(2, minmax(6vh, 9vh));
+  grid-template-columns: repeat(2, minmax(15rem, 20rem));
+  grid-template-rows: repeat(2, minmax(6rem, 9rem));
   grid-gap: 2rem;
-  width: 60vw;
+  width: 40rem;
+  height: 7rem;
   margin: 2vh auto;
   padding-top: 2vh;
+  justify-content: center;
+  align-items: stretch;
+  justify-items: stretch;
 }
 .btnQuestionTitle {
-  width: 60vw;
+  width: 40rem;
+  height: 8rem;
   margin-top: 3vh;
   font-size: 1.8rem;
 }
